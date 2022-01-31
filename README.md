@@ -1,3 +1,4 @@
+
 <p align="center">
   <a href="http://nestjs.com/" target="blank"><img src="https://nestjs.com/img/logo_text.svg" width="320" alt="Nest Logo" /></a>
 </p>
@@ -24,7 +25,8 @@
 
 ## Description
 
-[Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
+[Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.<br/>
+The whole API configuration is inside **/envs** folder. It is where all environment variables are.
 
 ## Installation
 
@@ -35,15 +37,31 @@ $ npm install
 ## Running the app
 
 ```bash
-# development
-$ npm run start
+# Start docker containers with Postgres and RabbitMQ
+$ docker-compose up
 
-# watch mode
+# Development
+# Watch mode
 $ npm run start:dev
 
-# production mode
+# Production mode
 $ npm run start:prod
 ```
+## Prisma
+```bash
+# Generate a new migration
+$ npm run generate:migration
+
+# With a name
+$ npm run generate:migration --name {migration name}
+
+# Migrate to the database
+$ npm run migrate:dev  # For development environment
+$ npm run migrate:prod # For production environment
+```
+
+## RabbitMQ
+Access http://localhost:15673 to see RabbitMQ dashboard.
 
 ## Test
 
@@ -57,17 +75,3 @@ $ npm run test:e2e
 # test coverage
 $ npm run test:cov
 ```
-
-## Support
-
-Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you'd like to join them, please [read more here](https://docs.nestjs.com/support).
-
-## Stay in touch
-
-- Author - [Kamil Myśliwiec](https://kamilmysliwiec.com)
-- Website - [https://nestjs.com](https://nestjs.com/)
-- Twitter - [@nestframework](https://twitter.com/nestframework)
-
-## License
-
-Nest is [MIT licensed](LICENSE).

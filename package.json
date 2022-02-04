@@ -19,7 +19,7 @@
     "test:cov": "jest --coverage",
     "test:debug": "node --inspect-brk -r tsconfig-paths/register -r ts-node/register node_modules/.bin/jest --runInBand",
     "test:e2e": "jest --config ./test/jest-e2e.json",
-    "generate:migration": "npx prisma migrate dev",
+    "generate:migration": "dotenv -e ./envs/.dev.env prisma migrate dev",
     "migrate:dev": "dotenv -e ./envs/.dev.env prisma migrate dev",
     "migrate:prod": "dotenv -e ./envs/.prod.env prisma migrate dev"
   },
@@ -32,6 +32,7 @@
     "@nestjs/swagger": "^5.2.0",
     "@nestjs/throttler": "^2.0.0",
     "@prisma/client": "^3.8.1",
+    "amazon-cognito-identity-js": "^5.2.6",
     "amqp-connection-manager": "^4.0.1",
     "amqplib": "^0.8.0",
     "class-transformer": "^0.5.1",

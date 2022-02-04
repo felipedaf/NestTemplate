@@ -1,6 +1,7 @@
 import { Module } from '@nestjs/common';
 import { ConfigModule } from '@nestjs/config';
 import { ThrottlerModule } from '@nestjs/throttler';
+import { AuthModule } from '../auth/auth.module';
 import { PrismaModule } from '../prisma/prisma.module';
 import { RmqClientModule } from '../rmqClient/rmqClient.module';
 import { UserModule } from '../user/user.module';
@@ -20,6 +21,7 @@ import { AppService } from './app.service';
     PrismaModule,
     UserModule,
     RmqClientModule,
+    AuthModule,
   ],
   controllers: [AppController],
   providers: [AppService],
